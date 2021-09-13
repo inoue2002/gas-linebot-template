@@ -1,0 +1,11 @@
+{
+  "name": "gas-linebot-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:inoue2002/gas-linebot-template.git",
+  "author": "inoue2002 <54356188+youkan2002@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^4.4.3"
+  }
+}
