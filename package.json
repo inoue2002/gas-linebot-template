@@ -1,6 +1,11 @@
 {
   "scripts": {
-    "lintfix": "prettier --write './src/**/*.{js,ts}' && eslint --fix './src/**/*.{js,ts}'"
+    "lintfix": "prettier --write './src/**/*.{js,ts}' && eslint --fix './src/**/*.{js,ts}'",
+    "compile": "cp appsscript.json dist/appsscript.json && tsc",
+    "push": "yarn lintfix && yarn compile && clasp push -f",
+    "deploy": "yarn push && clasp deploy",
+    "deploy-develop": "yarn push && clasp deploy -i <検証用のデプロイID> -d 'develop'",
+    "deploy-production": "yarn push && clasp deploy -i <本番用のデプロイID> -d 'production'"
   },
   "name": "gas-linebot-template",
   "version": "1.0.0",
@@ -13,7 +18,6 @@
     "@types/google-apps-script": "^1.0.37",
     "@typescript-eslint/eslint-plugin": "^4.31.0",
     "@typescript-eslint/parser": "^4.31.0",
-    "clasp": "^1.0.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "prettier": "^2.4.0",
