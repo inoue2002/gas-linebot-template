@@ -12,7 +12,7 @@ clasp create --type sheets
 
 ```
 
-- .clasp.jsonにrootdirを追記
+- .clasp.jsonにrootdirの値をdistに変更
 
 ```.clasp.json
  "rootDir": "dist"
@@ -25,3 +25,28 @@ clasp create --type sheets
   "executeAs": "USER_DEPLOYING"
  }
 ```
+
+```
+//デプロイ
+yarn deploy
+
+以下のようなログが出たら成功
+└─ dist/appsscript.json
+└─ dist/main.js
+Pushed 2 files.
+Created version 1.
+- <デプロイID> @1.
+✨  Done in 16.25s.
+```
+
+```
+https://script.google.com/macros/s/<デプロイID>/exec　がLINEBotのwebhookUrlになる
+```
+
+- API有効化
+```
+clasp open 
+```
+
+
+どうやらモジュールはそのままでは使えないぽいので何か打開策を考えなければいけない
